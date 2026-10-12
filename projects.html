@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Devin Moore | CORTEX, Quantum Experiments, Moore Electric</title>
+<meta name="description" content="Build notes and receipts: CORTEX (typed claim records, deterministic Rust validator), quantum experiments on IBM's ibm_marrakesh with predictions locked before each run, and Moore Electric.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Devin Moore">
+<meta property="og:title" content="Projects — Devin Moore">
+<meta property="og:description" content="CORTEX, real IBM quantum experiments with locked predictions, and Moore Electric. Claims with receipts.">
+<meta property="og:image" content="https://dvnmr.github.io/devin-moore/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects — Devin Moore">
+<meta name="twitter:description" content="CORTEX, real IBM quantum experiments with locked predictions, and Moore Electric. Claims with receipts.">
+<meta name="twitter:image" content="https://dvnmr.github.io/devin-moore/img/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">DEVIN MOORE<small>BILOXI · MS</small></a>
+    <nav class="links" aria-label="Primary">
+      <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#direction">Direction</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn-volt" href="tel:+12282249150">Call (228) 224-9150</a>
+  </div>
+</header>
+
+<main>
+  <section aria-label="Projects">
+    <div class="wrap">
+      <p class="eyebrow">Projects</p>
+      <h1 class="display" style="font-size:clamp(2.2rem,6vw,3.6rem);margin:10px 0 10px">Claims with <span style="color:transparent;-webkit-text-stroke:1.5px var(--blue)">receipts</span></h1>
+      <p class="lede">Everything below is stated the way it would be stated in my own ledger: what was predicted, what was run, what came back — including where the honest answer is &ldquo;inconclusive.&rdquo;</p>
+
+      <article id="cortex" class="card" style="margin-top:44px">
+        <span class="tag">Systems — ongoing</span>
+        <h3 style="font-size:1.5rem">CORTEX — an operating system for thought</h3>
+        <p style="margin-bottom:12px">CORTEX started as a continuity system: I was tired of losing work — chats that forget, tools that can&rsquo;t see each other, ideas stranded on a dead phone. It grew into a governed pipeline on my own laptop: request → retrieval → policy → action → verification → signed receipt → visual state.</p>
+        <ul class="ticks">
+          <li><strong>Typed CLAIM records.</strong> Every load-bearing claim carries an ID, evidence list, confidence, status, and a calibration block separating what was verified by running from what is assumed or still open.</li>
+          <li><strong>A deterministic Rust validator</strong> (rules R01–R10, no network, no AI in the loop) is the only component allowed to say &ldquo;verified.&rdquo; Models propose; the validator disposes.</li>
+          <li><strong>Proof-ladder discipline.</strong> Idea, spec, code, test, merge, transfer, run-on-target-hardware, live, evaluated — no rung gets claimed without its own evidence.</li>
+          <li><strong>Formal verification, reported honestly.</strong> Of 19 Kani proof harnesses on the OS kernel code, 13 proofs pass; 6 time out and are recorded as inconclusive — not success. An earlier &ldquo;verified&rdquo; label that outran the evidence was retracted in writing.</li>
+          <li><strong>A bootable OS and an honest cockpit:</strong> where data can&rsquo;t be reached, the interface shows UNKNOWN instead of inventing a number.</li>
+        </ul>
+      </article>
+
+      <article id="quantum" class="card" style="margin-top:22px">
+        <span class="tag">Research — personal projects, October 2026</span>
+        <h3 style="font-size:1.5rem">Quantum experiments on IBM hardware</h3>
+        <p style="margin-bottom:12px">Designed and run on IBM&rsquo;s <strong>ibm_marrakesh</strong> quantum processor through the IBM Quantum platform. The discipline matters more than the physics: predictions are written and locked before each run, and the result is reported against them — hit or miss.</p>
+        <table class="data">
+          <caption style="text-align:left;padding:6px 0;color:var(--sub)">Bell (CHSH) test — 4 circuits × 4,096 shots · Job db67v2qmb58s738bd6gg</caption>
+          <tr><th scope="row">Measured S value</th><td>2.7319 ± 0.0228</td></tr>
+          <tr><th scope="row">Classical limit</th><td>2.0 — beaten by 32.1 standard deviations</td></tr>
+          <tr><th scope="row">Verdict</th><td>Entanglement confirmed on real hardware; signed claim record validated</td></tr>
+        </table>
+        <table class="data">
+          <caption style="text-align:left;padding:14px 0 6px;color:var(--sub)">GHZ entanglement scaling — Job db68isslf4us73c4vjpg</caption>
+          <tr><th scope="row">Fidelities, N = 3 → 8</th><td>0.946 · 0.918 · 0.793 · 0.606 · 0.598 · 0.307</td></tr>
+          <tr><th scope="row">Prediction vs outcome</th><td>Genuine entanglement certified through 7 qubits; the pre-run prediction said 8</td></tr>
+          <tr><th scope="row">Open investigation</th><td>The N = 6–8 chain ran through physical qubit 34, whose measured behavior contradicted IBM&rsquo;s own calibration from 29 minutes earlier. A minimal recheck experiment is specified to separate hardware fault, transient event, and our own pipeline error — in that order of suspicion</td></tr>
+        </table>
+      </article>
+
+      <div class="split">
+        <article class="card">
+          <span class="tag">Business</span>
+          <h3 style="font-size:1.3rem">Moore Electric</h3>
+          <p style="margin-bottom:12px">The front door: a one-man electrical business on the Mississippi Gulf Coast, run with an AI crew handling the website, records, and follow-through while I do the work on the ladder.</p>
+          <ul class="ticks">
+            <li><strong>4.9/5 on HomeAdvisor</strong> across 8 reviews, none below four stars</li>
+            <li><strong>100% recommended on Facebook</strong> — five named five-star reviews</li>
+            <li><strong>Written quotes</strong>, real job photos, prices stated up front</li>
+          </ul>
+          <p style="margin-top:12px"><a href="https://228mooreelectric.com">Visit 228mooreelectric.com →</a></p>
+        </article>
+        <figure>
+          <img src="img/panel-ev.jpg" alt="Electrical panel with a ChargePoint Level 2 EV charger and GFCI outlet installed below it" width="1000" height="1333" loading="lazy">
+          <figcaption>Panel work with a ChargePoint Level 2 EV charger — the trade and the tech in one frame.</figcaption>
+        </figure>
+      </div>
+
+      <article class="card" style="margin-top:22px">
+        <span class="tag">Method</span>
+        <h3 style="font-size:1.3rem">How the crew works</h3>
+        <p>Multiple AI models, each with a defined seat and a bounded job, coordinated through shared records: instant coordination in chat, a full backup of every seat&rsquo;s work to shared storage on a twenty-minute cycle, and one rule above all — a claim moves forward only with its evidence attached. When a model&rsquo;s own threshold math was tested and failed, the failure was published to the whole crew the same morning, formula and all. That is the culture the portfolio runs on.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap row">
+    <span>© 2026 Devin Moore · Biloxi, MS</span>
+    <span><a href="index.html">Home</a> · <a href="https://228mooreelectric.com">Moore Electric</a> · <a href="https://www.facebook.com/228MooreElectric">Facebook</a></span>
+  </div>
+</footer>
+
+<div class="callbar" role="navigation" aria-label="Quick contact">
+  <a href="tel:+12282249150">Call (228) 224-9150</a>
+  <a href="sms:+12282249150">Text</a>
+</div>
+</body>
+</html>
